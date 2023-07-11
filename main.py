@@ -102,8 +102,8 @@ def cpf_search():
                 manager.save_json(archive, cpf_list)
 
             elif choice == 2:
-                archive = manager.buscador_json()
-                dados = manager.ler_json(archive)
+                archive = manager.search_json()
+                dados = manager.read_json(archive)
                 print('\nCPF do arquivo:')
                 for CPF in dados:
                     print(CPF)
