@@ -11,24 +11,24 @@ After generating a CPF, you can save it to a list for later use or discard it. T
 
 3. CPF Manager: allows the user to manually save CPFs in a JSON file, search CPFs in existing files and view saved CPFs. The user can choose from the following options:
 
-* Save CPFs manually: The user can manually enter the CPFs he wants to save and provide a name for the file where they will be stored.
-* Search a CPF file: User can select an existing file and view all CPFs saved in it.
-* Exit Manager: Closes the CPFs management program.
+   * Save CPFs manually: The user can manually enter the CPFs he wants to save and provide a name for the file where they will be stored.
+   * Search a CPF file: User can select an existing file and view all CPFs saved in it.
+   * Exit Manager: Closes the CPFs management program.
 
 ## Requirements
 
 Python 3.11.x
 
 ## How to use
-1 Download or clone the program repository.
+1. Download or clone the program repository.
 
-2 Make sure you have Python 3.11.x installed on your system.
+2. Make sure you have Python 3.11.x installed on your system.
 
-3 Run the main.py file using the following command:
+3. Run the main.py file using the following command:
 
        python main.py
 
-4 Follow the instructions provided by the program to generate and manage passwords.
+4. Follow the instructions provided by the program to generate and manage passwords.
 
 ## Files
 
