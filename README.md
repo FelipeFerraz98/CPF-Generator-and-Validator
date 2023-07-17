@@ -35,6 +35,7 @@ Python 3.11.x
 * main.py: Contains the main function of the program, where the user can choose between the CPF Generator, CPF Validator and CPF Manager.
 * algorithm_generator.py: Contains logic to generate valid CPFs.
 *algorithm_validator.py: Contains logic to validate the inserted CPFs and return whether it is valid or invalid.
+* digit.py: Contains CPF digit generation logic.
 * manager.py: Contains functions to save, search and read CPFs in JSON files.
 
 ## Contribution
