@@ -1,14 +1,16 @@
-from algorithm_validator import algorithm_validator # Importa a função algorithm_validator do módulo algorithm_validator
-from algorithm_generator import algorithm_generator # # Importa a função algorithm_generator do módulo algorithm_generator
+from algorithm_validator import AlgorithmValidator # Importa a classe AlgorithmValidator do módulo algorithm_validator
+from algorithm_generator import AlgorithmGenerator # # Importa a classe AlgorithmGenerator do módulo algorithm_generator
 import manager # Importa o módulo manager
 import time # Importa biblioteca time
 
 
+
 # Função que entrega as configurações para o usuário e logo após chama função algorithm_generator
-def cpf_generator(): 
+def cpf_generator():
     cpf_list = [] # Lista de CPFS gerados
     while True:
-        cpf = algorithm_generator() # Chama função algorithm_generator
+        cpf_algorithm = AlgorithmGenerator() # Chama a classe AlgorithmGenerator e atribui na variavel
+        cpf = cpf_algorithm.generator # Chama função de gerar cpf
         print(f'\nO CPF gerado foi: {cpf}') # Imprime o resultado da função, CPF
 
         save = input("\nDeseja salvar o CPF? (S/N): ") # Pergunta ao usuário se deseja salvar o CPF gerado
@@ -30,8 +32,9 @@ def cpf_generator():
             print("\nObrigado por utilizar o gerador de CPF\n") # Mensagem de fechamento do gerador
             break # Fecha o gerador de CPF
 
-def algorithm_validator_return(cpf):
-    if algorithm_validator(cpf): # Mandando o CPF para o algorithm_validator
+def algorithm_validator_return(cpf: str) -> str:
+    validator = AlgorithmValidator(cpf).validator # Mandando o CPF para o algorithm_validator
+    if validator:
         print(f'CPF {cpf} É VÁLIDO!') # Caso algorithm_validator retorne True
     else:
         print(f'CPF {cpf} É INVALIDO!') # Caso algorithm_validator retorne False
@@ -75,6 +78,10 @@ def cpf_validator():
                 # Desempacotando lista    
                 for cpf in cpf_list:
                     algorithm_validator_return(cpf) # Verificar se o CPF é válido
+                
+                # Tempo de espera para o programa continuar após 3 segundos 
+                # para assim o usuário visualizar melhor os CPFs
+                time.sleep(3) 
 
             # Escolha 2, buscar arquivo json e verificar CPFs
             elif choice == 2:
@@ -86,7 +93,8 @@ def cpf_validator():
                 for cpf in dados:
                     algorithm_validator_return(cpf) # Verificar se o CPF é válido
 
-                # Tempo de espera para o programa continuar após 3 segundos para assim o usuário visualizar melhor os CPFs       
+                # Tempo de espera para o programa continuar após 3 segundos 
+                # para assim o usuário visualizar melhor os CPFs       
                 time.sleep(3) 
 
             # Caso de escolha saida do validador
@@ -140,7 +148,8 @@ def cpf_search():
                     print(CPF)
                 print()
 
-                # Tempo de espera para o programa continuar após 3 segundos para assim o usuário visualizar melhor os CPFs
+                # Tempo de espera para o programa continuar após 3 segundos 
+                # para assim o usuário visualizar melhor os CPFs
                 time.sleep(3)
 
             # Escolha de fechar programa
